@@ -13,43 +13,57 @@ Stampare le stesse informazioni su DOM sottoforma di stringhe */
 // Barbara Ramos	Graphic Designer	barbara-ramos-graphic-designer.jpg
 
 
-let teamMembers = [
+const teamMembers = [
     {
-        name: 'Wayne Barnett',
-        role: 'Founder & CEO',
-        idPic: 'wayne-barnett-founder-ceo.jpg'
+        "name": 'Wayne Barnett',
+        "role": 'Founder & CEO',
+        "idPic": 'wayne-barnett-founder-ceo.jpg'
     },
 
     {
-        name: 'Angela Caroll',
-        role: 'Chief Editor',
-        idPic: 'angela-caroll-chief-editor.jpg'
+        "name": 'Angela Caroll',
+        "role": 'Chief Editor',
+        "idPic": 'angela-caroll-chief-editor.jpg'
     },
 
     {
-        name: 'Walter Gordon',
-        role: 'Office Manager',
-        idPic: 'walter-gordon-office-manager.jpg'
+        "name": 'Walter Gordon',
+        "role": 'Office Manager',
+        "idPic": 'walter-gordon-office-manager.jpg'
     },
 
     {
-        name: 'Angela Lopez',
-        role: 'Social Media Manager',
-        idPic: 'angela-lopez-social-media-manager.jpg'
+        "name": 'Angela Lopez',
+        "role": 'Social Media Manager',
+        "idPic": 'angela-lopez-social-media-manager.jpg'
     },
-    
+
     {
-        name: 'Scott Estrada',
-        role: 'Developer',
-        idPic: 'scott-estrada-developer.jpg'
+        "name": 'Scott Estrada',
+        "role": 'Developer',
+        "idPic": 'scott-estrada-developer.jpg'
     },
-    
+
     {
-        name: 'Barbara Ramos',
-        role: 'Graphic Designer',
-        idPic: 'barbara-ramos-graphic-designer.jpg'
+        "name": 'Barbara Ramos',
+        "role": 'Graphic Designer',
+        "idPic": 'barbara-ramos-graphic-designer.jpg'
     }
-
 ];
 
-console.log(teamMembers);
+
+// MILESTONE 1: Stampare su console le informazioni
+for (const i in teamMembers) {
+    const member = teamMembers[i];
+    console.log(`${member.name} - ${member.role} - ${member.idPic}`);
+}
+
+// MILESTONE 2: Stampare su DOM sottoforma di stringhe
+const teamList = document.getElementById('team-list');
+
+for (const i in teamMembers) {
+    const member = teamMembers[i];
+    const memberInfo = document.createElement('p');
+    memberInfo.textContent = `${member.name} - ${member.role} - ${member.idPic}`;
+    teamList.appendChild(memberInfo);
+}
